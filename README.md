@@ -1,5 +1,4 @@
 # TP-DSW
-Repo de trabajo practico grupal
 
 ## Integrantes
   50430 - Munné, María Lucía.
