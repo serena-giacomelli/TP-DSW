@@ -13,7 +13,7 @@ Repo de trabajo practico grupal
 Nuestro trabajo es sobre una página de ventas de muebles y decoraciones. Nuestro proyecto se basa en que el usuario pueda buscar el producto que desee , permitiéndole comparar distintos precios y marcas. 
 
 ### Modelo
-[link]
+[Modelo de Dominio](https://app.diagrams.net/#G1pXzks82X4Md6nmZlfyS6OVUIWu8OxMMS#%7B%22pageId%22%3A%228lCWaEY0jHqENc2HCXR9%22%7D).
 
 ## Alcance Funcional
 ### Alcance Mínimo
