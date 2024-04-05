@@ -24,4 +24,3 @@ Nuestro trabajo es sobre una página de ventas de muebles y decoraciones. Nuestr
 |Listado<br>+<br>detalle|1. Listado por categoria, muestra ordenado por categoria de baño, jardín, cocina, habitación, living<br>2. Listado por precio ascendente, muestra ordenado del producto más barato al más caro <br>3. Listado por precio descendente, muestra ordenado del producto más caro al más barato<br>4. Listado por destacados, muestra los más populares primero|
 |CUU/Epic|1. Registrar usuario<br>2. Mostrar productos<br>3. Elegir productos<br>4. Realizar compra<br>5. Realizar Pago|
 
-### Alcance Adicional Voluntario
