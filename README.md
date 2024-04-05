@@ -10,5 +10,6 @@ Repo de trabajo practico grupal
 
 ## Tema
 
-## Descripción
+
+### Descripción
 Nuestro trabajo es sobre una página de ventas de muebles y decoraciones. Nuestro proyecto se basa en que el usuario pueda buscar el producto que desee , permitiéndole comparar distintos precios y marcas. 
