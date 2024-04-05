@@ -16,6 +16,6 @@ Nuestro trabajo es sobre una página de ventas de muebles y decoraciones. Nuestr
 [link]
 
 ## Alcance Funcional
-###Alcance Mínimo
+### Alcance Mínimo
 
 ### Alcance Adicional Voluntario
