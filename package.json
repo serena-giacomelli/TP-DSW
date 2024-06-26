@@ -1,24 +1,22 @@
 {
-  "name": "tp-dsw",
-  "type": "module",
+  "name": "05.01-express-simple-api",
   "version": "1.0.0",
-  "main": "crudUsuarios.js",
+  "type": "module",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p ./tsconfig.json",
-    "start:dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/crudUsuarios.js\""
+    "start:dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/app.js\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/express": "4.17.21",
-    "@types/node": "20.12.12",
-    "tsc-watch": "6.2.0",
-    "typescript": "5.4.5"
-  },
   "dependencies": {
-    "express": "4.19.2"
+    "express": "4.18.2"
   },
-  "description": ""
+  "devDependencies": {
+    "@types/express": "4.17.17",
+    "@types/node": "20.5.0",
+    "tsc-watch": "6.0.4",
+    "typescript": "5.1.6"
+  }
 }

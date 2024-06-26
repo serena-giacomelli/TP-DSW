@@ -1,0 +1,48 @@
+
+### OBTENER TODOS LOS USUARIOS
+
+GET http://localhost:3000/api/usuarios
+
+
+###OBTENER UN SOLO USUARIO
+GET http://localhost:3000/api/usuarios/45638062
+
+###CREAR UN NUEVO USUARIO
+
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "nombre": "Bruno",
+    "apellido": "Cascardo",
+    "dni": "45887542",
+    "fechaNacimiento": "2004-05-23",
+    "email": "bru@gmail.com"
+    
+}
+
+###MODIFICAR UN CHARACTER (PUT- modificar recurso completo e idempotente)
+PUT http://localhost:3000/api/usuarios/45638062 
+Content-Type: application/json
+
+{
+    "nombre": "Chiara",
+    "apellido": "Leonardi",
+    "dni": "45638062",
+    "fechaNacimiento": "2000-05-25",
+    "email": "seregiacomelli@gmail.com"
+}
+
+###MODIFICAR UN CHARACTER (PATCH- modificar recurso  de forma parcial)
+PATCH http://localhost:3000/api/usuarios/45638062
+Content-Type: application/json
+
+{
+    "nombre": "Maria Lucia",
+    "apellido": "Munne",
+    "dni": "45638062"
+  
+}
+
+###ELIMINAR UN CHARACTER
+DELETE http://localhost:3000/api/usuarios/45638062 
