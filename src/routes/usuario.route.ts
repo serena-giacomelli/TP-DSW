@@ -1,6 +1,6 @@
 //archivo independiente donde se guardan las rutas
 import { Router } from 'express'
-import { add, findAll, findOne, remove, sanitizeUsuarioInput, update } from './usuario.controler.js';
+import { add, findAll, findOne, remove, sanitizeUsuarioInput, update } from '../controllers/usuario.controler.js';
 
 export const usuarioRouter = Router()
 
