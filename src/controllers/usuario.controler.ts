@@ -5,7 +5,7 @@ import { Usuario } from '../models/usuarios.entity.js'
 
 const repository = new UsuarioRepository()
 
-function sanitizeUsuarioInput(req: Request, res: Response, next: NextFunction){
+async function sanitizeUsuarioInput(req: Request, res: Response, next: NextFunction){
     req.body.sanitizedInput = {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
@@ -23,13 +23,13 @@ function sanitizeUsuarioInput(req: Request, res: Response, next: NextFunction){
 }
 
 //obtener todos
-function findAll(req: Request, res: Response){
-    res.json({data:repository.findAll()})
+async function findAll(req: Request, res: Response){
+    res.json({data: await repository.findAll() })
 }
 
 //obtener uno mediante dni
-function findOne(req:Request, res:Response){
-    const usuario = repository.findOne({dni: req.params.dni})   
+async function findOne(req:Request, res:Response){
+    const usuario = await repository.findOne({dni: req.params.dni})   
     if(!usuario){
        return res.status(404).send({message: 'Usuario not found'})
     }
@@ -38,7 +38,7 @@ function findOne(req:Request, res:Response){
 
 //agregar un usuario nuevo
 
-function add(req: Request, res: Response){
+async function add(req: Request, res: Response){
     const input = req.body.sanitizedInput
    
     const usuarioInput = new Usuario(
@@ -49,14 +49,14 @@ function add(req: Request, res: Response){
         input.mail
     )
     
-    const usuario = repository.add(usuarioInput)
+    const usuario = await repository.add(usuarioInput)
     return res.status(201).send({ message: 'Usuario created', data: usuario })
 }
 
 //modificar un recurso en su totalidad
-function update(req: Request, res: Response){
+async function update(req: Request, res: Response){
     req.body.sanitizedInput.dni = req.params.dni
-    const usuario = repository.update(req.body.sanitizedInput)
+    const usuario =await repository.update(req.body.sanitizedInput)
     if(!usuario){
         return res.status(404).send({message: 'Usuario not found'})
     } 
@@ -65,9 +65,9 @@ function update(req: Request, res: Response){
 }
 
 //elmiminar un recurso
-function remove(req: Request, res: Response){
+async function remove(req: Request, res: Response){
     const dni = req.params.dni
-    const usuario = repository.delete({dni})
+    const usuario = await repository.delete({dni})
 
     if(!usuario){
         res.status(404).send({message: 'Usuario not found'})

@@ -1,54 +1,35 @@
 import { Repository } from "../shared/repository.js";
 import { Usuario } from "../models/usuarios.entity.js";
+import { db } from "../shared/db/conn.js";
+import { ObjectId } from "mongodb";
 
-const usuarios= [
-    new Usuario(
-        'Serena', 
-        'Giacomelli', 
-        "45638062", 
-        "2004-06-04", 
-        "sere22giacomelli@gmail.com"),
-  
-    new Usuario(
-        'Sofia', 
-        'Coppari', 
-        "44658779", 
-        "2004-03-25", 
-        "sofia@gmail.com"),
-    ]
+const usuarios = db.collection<Usuario>('usuarios')
 
-export class UsuarioRepository implements Repository<Usuario>{
-
-    public findAll(): Usuario[] | undefined{
-        return usuarios;
+export class UsuarioRepository implements Repository<Usuario> {
+    public async findAll(): Promise<Usuario[] | undefined> {
+        return await usuarios.find().toArray()
 
     }
 
-    public findOne(item: {dni:string; }): Usuario | undefined{
-        return usuarios.find((usuario) => usuario.dni === item.dni)
+    public async findOne(item: {dni:string; }): Promise<Usuario | undefined> {
+        const _id = new ObjectId(item.dni);
+        return (await usuarios.findOne({_id}))|| undefined
     }
 
-    public add(item: Usuario): Usuario | undefined {
-        usuarios.push(item)
+    public async add(item: Usuario): Promise<Usuario | undefined> {
+        item._id = (await usuarios.insertOne(item)).insertedId
         return item
     }
 
-    public update(item: Usuario): Usuario | undefined {
-        const usuarioIdx = usuarios.findIndex((usuario) => usuario.dni === item.dni)
-    if(usuarioIdx !== -1){
-       usuarios[usuarioIdx] = {...usuarios[usuarioIdx], ...item}     
-    }
-    return usuarios[usuarioIdx]
+    public async update(item: Usuario): Promise<Usuario | undefined> {
+        const {dni, ...usuarioInput} = item
+        const _id = new ObjectId(dni)
+        return (await usuarios.findOneAndUpdate({_id}, {$set: usuarioInput}, {returnDocument: 'after'})) || undefined
 }
 
-public delete(item: { dni:string; }): Usuario | undefined {
-    const usuarioIdx = usuarios.findIndex((usuario) => usuario.dni === item.dni)
-
-    if(usuarioIdx !== -1){
-        const deletedUsuarios = usuarios[usuarioIdx]
-        usuarios.splice(usuarioIdx, 1)
-        return deletedUsuarios
-    }
+public async delete(item: { dni:string; }): Promise<Usuario | undefined> {
+    const _id = new ObjectId(item.dni)
+    return (await usuarios.findOneAndDelete({_id})) || undefined
 }
 
 }
