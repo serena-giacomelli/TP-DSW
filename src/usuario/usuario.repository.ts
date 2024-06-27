@@ -1,5 +1,5 @@
 import { Repository } from "../shared/repository.js";
-import { Usuario } from "./usuarios.entity.js";
+import { Usuario } from "../models/usuarios.entity.js";
 
 const usuarios= [
     new Usuario(

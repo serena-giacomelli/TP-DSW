@@ -17,7 +17,8 @@ Content-Type: application/json
     "apellido": "Cascardo",
     "dni": "45887542",
     "fechaNacimiento": "2004-05-23",
-    "email": "bru@gmail.com"   
+    "email": "bru@gmail.com"
+    
 }
 
 ###MODIFICAR UN CHARACTER (PUT- modificar recurso completo e idempotente)

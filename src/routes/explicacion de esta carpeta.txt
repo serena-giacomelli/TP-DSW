@@ -1,0 +1,1 @@
+aca se definen los endpoints y asigna el controlador correspondiente a cada ruta
