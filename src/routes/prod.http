@@ -1,0 +1,43 @@
+### Obtener todos los productos -> ver como cambiarlo
+
+GET http://localhost:3000/api/prod
+
+### Obtener un producto por codigo
+### Modificar ruta cod en cuanto pueda instalarme mongodb
+GET http://localhost:3000/api/prod/2f8f74cf-48d9-484e-9d82-234c30dee7cb
+### Crear un  producto
+
+POST http://localhost:3000/api/prod/
+Content-Type: application/json
+
+{
+    "nombre": "Mueble cocina",
+    "cantidad": "45",
+    "descripcion": "Todo mueble que se destine para la cocina"
+}
+
+### modificar un producto (PUT - recurso completo)
+
+PUT http://localhost:3000/api/prod/2f8f74cf-48d9-484e-9d82-234c30dee7cb
+Content-Type: application/json
+
+{
+    "nombre": "Mueble dormitorio",
+    "cantidad": "25",
+    "descripcion": "Todo mueble que se destine al dormitorio"
+}
+
+### modificar un producto (PATCH - recurso parcial)
+
+PATCH http://localhost:3000/api/prod/2f8f74cf-48d9-484e-9d82-234c30dee7cb
+Content-Type: application/json
+
+{
+    "nombre": "Prod cambiado",
+    "cantidad": "15",
+    "descripcion": "ingrese descripcion"
+}
+
+### Borrar un producto
+
+DELETE http://localhost:3000/api/prod/2f8f74cf-48d9-484e-9d82-234c30dee7cb
