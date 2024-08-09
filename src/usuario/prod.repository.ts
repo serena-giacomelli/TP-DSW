@@ -1,4 +1,4 @@
-import { Repository } from "../shared/repository";
+import { Repository } from "../shared/repository2";
 import { Producto } from "../models/prod.entity";
 
 const producto = [new Producto(
