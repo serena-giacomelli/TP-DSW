@@ -1,7 +1,7 @@
 import express from 'express';
-import { usuarioRouter } from './routes/usuario.route.js';
-import { tipoRouter } from './routes/tipo.route.js';
-import { ProdRouter } from './routes/prod.route.js';
+import { usuarioRouter } from './src/routes/usuario.route.js';
+import { tipoRouter } from './src/routes/tipo.route.js';
+import { ProdRouter } from './src/routes/prod.route.js';
 
 const app = express()
 app.use(express.json()) //callback que maneja todas las rutas

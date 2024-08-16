@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "incremental": true,
     "target": "es2020",
     "module": "ES2022",
@@ -14,6 +15,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
-  "include": ["src/**/*", "**/*.ts"],
+  "include": ["src/**/*", "**/*.ts", "webpack.config.cjs"],
   "exclude": ["node_modules"]
 }
