@@ -18,8 +18,8 @@ Nuestro trabajo es sobre una página de ventas de muebles y decoraciones. Nuestr
 ### Alcance Mínimo
 |Req|Detalle|
 |:-|:-|
-|CRUD simple|1. CRUD Tipo Producto<br>2. CRUD Usuario<br>3. CRUD Marca<br>4. CRUD Sucursal<br>5. CRUD Provincia<br>6. CRUD Localidad<br>7. CRUD Compra<br>8. CRUD Oferta<br>9. Producto|
-|CRUD dependiente|1. CRUD Precio {depende de} CRUD Oferta<br>2. CRUD Producto {depende de} CRUD Tipo Producto<br>3. CRUD Compra {depende de } Producto<br>4. CRUD Sucursal {depende de} Producto<br>5.CRUD Oferta{ depende de} Producto|
+|CRUD simple|1. CRUD Tipo Producto<br>2. CRUD Usuario<br>3. CRUD Marca<br>4. CRUD Empresa<br>5. CRUD Provincia<br>6. CRUD Localidad<br>7. CRUD Linea de pedido<br>|
+|CRUD dependiente|1. CRUD Pago {depende de} CRUD Usuario y CRUD Pedido<br>2. CRUD Producto {depende de} CRUD Tipo Producto<br>3. CRUD Pedido {depende de } Linea de pedido<br>4. CRUD Marca {depende de} CRUD Sucursal<br>5.CRUD Transportista{ depende de} Pedido|
 |CUU/Epic|1. Registrar usuario<br>2. Mostrar productos<br>3. Elegir productos<br>4. Realizar compra<br>5. Realizar Pago|
 
 ### Alcane Voluntario
