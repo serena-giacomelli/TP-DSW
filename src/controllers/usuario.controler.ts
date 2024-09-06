@@ -23,7 +23,7 @@ async function sanitizeUsuarioInput(req: Request, res: Response, next: NextFunct
 }
 
 //obtener todos
-async function findAll(req: Request, res: Response){
+/*async function findAll(req: Request, res: Response){
     res.json({data: await repository.findAll() })
 }
 
@@ -76,5 +76,29 @@ async function remove(req: Request, res: Response){
     }
       
 }
+
+export {sanitizeUsuarioInput, findAll, findOne, update, remove, add}*/
+
+//se cambian los metodos para la incorporacion de mikroorm
+
+async function findAll(req: Request, res: Response){
+    res.status(500).json({ message: 'Not implemented' })
+}
+
+async function findOne(req:Request, res:Response){
+    res.status(500).json({ message: 'Not implemented' })
+}
+
+async function add(req: Request, res: Response){
+    res.status(500).json({ message: 'Not implemented' })
+}
+
+async function update(req: Request, res: Response){
+    res.status(500).json({ message: 'Not implemented' })
+}
+
+async function remove(req: Request, res: Response){
+    res.status(500).json({ message: 'Not implemented' })
+}  
 
 export {sanitizeUsuarioInput, findAll, findOne, update, remove, add}

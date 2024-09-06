@@ -7,6 +7,7 @@ export class Usuario {
     public dni:string, 
     public fechaNacimiento:string, 
     public mail:string,
-    public _id?: ObjectId
+    public _id?: ObjectId,
+    public pedidos?: Pedido[]
 )   {}
 }
