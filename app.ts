@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express from 'express';
 import { usuarioRouter } from './src/routes/usuario.route.js';
-import { tipoRouter } from './src/routes/tipo.route.js';
+import { tipoRouter } from './src/tipoProducto/tipo.route.js';
 import { ProdRouter } from './src/routes/prod.route.js';
 import { orm, syncSchema } from './src/shared/db/orm.js';
 import { RequestContext } from '@mikro-orm/core';

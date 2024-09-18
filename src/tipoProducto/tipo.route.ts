@@ -1,5 +1,5 @@
-import { Router } from "express";
-import { sanitizeTipoInput, findAll, findOne, add, update, delet } from "../controllers/tipo.controler.js";
+ import { Router } from "express";
+import { sanitizeTipoInput, findAll, findOne, add, update, delet } from "../tipoProducto/tipo.controler";
 
 export const tipoRouter = Router()
 tipoRouter.get('/', findAll)

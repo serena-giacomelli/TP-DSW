@@ -1,4 +1,5 @@
 import { ObjectId } from "mongodb";
+import {Pedido} from "../models/pedido.entity";
 
 export class Usuario {
   constructor(

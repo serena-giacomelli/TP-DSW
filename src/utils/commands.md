@@ -1,6 +1,6 @@
 ## inicializar
     node --version > .nvmrc
-    npm add -E express
-    npm add -E -D typescript tsc-watch @types/express @types/node
-    npm add -E mongodb
-    npm run start:dev
+    pnpm add -E express
+    pnpm add -E -D typescript tsc-watch @types/express @types/node
+    pnpm add -E mongodb
+    pnpm run start:dev
