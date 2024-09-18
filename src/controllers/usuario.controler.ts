@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction} from 'express';
-import { UsuarioRepository } from '../usuario/usuario.repository.js';
+import { UsuarioRepository } from '../usuario/usuario.repository';
 import { Usuario } from '../models/usuarios.entity.js'
 
 
