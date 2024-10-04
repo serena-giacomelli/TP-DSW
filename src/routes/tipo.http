@@ -1,0 +1,40 @@
+### Obtener todos los productos -> ver como cambiarlo
+
+GET http://localhost:3000/api/tipoprod
+
+### Obtener un producto por id
+### Modificar ruta id en cuanto pueda instalarme mongodb
+GET http://localhost:3000/api/tipoprod/2f8f74cf-48d9-484e-9d82-234c30dee7cb
+### Crear un tipo producto
+
+POST http://localhost:3000/api/tipoprod/
+Content-Type: application/json
+
+{
+    "nombre": "Mueble cocina",
+    "descripcion": "Todo mueble que se destine para la cocina"
+}
+
+### modificar un tipo producto (PUT - recurso completo)
+
+PUT http://localhost:3000/api/tipoprod/2f8f74cf-48d9-484e-9d82-234c30dee7cb
+Content-Type: application/json
+
+{
+    "nombre": "Mueble dormitorio",
+    "descripcion": "Todo mueble que se destine al dormitorio"
+}
+
+### modificar un tipo producto (PATCH - recurso parcial)
+
+PATCH http://localhost:3000/api/tipoprod/2f8f74cf-48d9-484e-9d82-234c30dee7cb
+Content-Type: application/json
+
+{
+    "nombre": "Tipo cambiado",
+    "descripcion": "ingrese descripcion"
+}
+
+### Borrar un tipo producto
+
+DELETE http://localhost:3000/api/tipoprod/2f8f74cf-48d9-484e-9d82-234c30dee7cb

@@ -1,7 +1,7 @@
 // Middleware para sanitizar la entrada de los tipo pruducto
 import {Request, Response, NextFunction} from "express"
-import { TipoProductoRepository } from "../tipoProducto/tipo.repository.js";
-import { TipoProducto } from "../tipoProducto/tipo.entity.js";
+import { TipoProductoRepository } from "./tipo.repository.js";
+import { TipoProducto } from "./tipo.entity.js";
 
 const repository = new TipoProductoRepository()
 

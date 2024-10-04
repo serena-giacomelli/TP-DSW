@@ -1,20 +1,24 @@
-import { Repository } from "./shared/repository"
-import { TipoProducto } from "./tipo.entity.js"
-import { db } from "../tipoProducto/shared/conn" 
-import { ObjectId } from "mongodb"
-
-const tipoProd =db.collection<TipoProducto>('tipoproductos')
+import { Repository } from "../shared/repository";
+import { TipoProducto } from "../models/tipo.entity";
+import { pool } from "../shared/conn.js";
+import { RowDataPacket } from "mysql2";
 
 export class TipoProductoRepository implements Repository <TipoProducto>{
     public async findAll(): Promise<TipoProducto[] | undefined> {
-        return await tipoProd.find().toArray()
+        const [tipoP] = await pool.query ('SELECT * FROM tipoP')
+        return tipoP as TipoProducto[]
     }
 
     public async findOne(item: { id: string; }): Promise<TipoProducto | undefined> {
-        const _id = new ObjectId(item.id)
-        return (await tipoProd.findOne({ _id })) || undefined
+        const id = Number.parseInt(item.id)
+        const [tipoP] = await pool.query<RowDataPacket[]>('SELECT * FROM tipoP where id = ?', [id])
+        if (tipoP.length == 0) {
+            return undefined
+        }
+        const tipo = tipoP[0] as TipoProducto
+        return tipo
     }
-
+/*
     public async add(item: TipoProducto): Promise<TipoProducto | undefined> {
         item._id = (await (tipoProd.insertOne(item))).insertedId
         return item
@@ -30,4 +34,5 @@ export class TipoProductoRepository implements Repository <TipoProducto>{
         const _id = new ObjectId(item.id)
         return (await tipoProd.findOneAndDelete({_id})) || undefined
       }
-}
+*/
+      }
